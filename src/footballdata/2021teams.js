@@ -1,4 +1,4 @@
-export const teams2021 = {
+const epl2021 = {
   status: true,
   data: {
     name: "English Premier League",
@@ -3149,3 +3149,5 @@ export const teams2021 = {
     ],
   },
 };
+
+export default epl2021;
