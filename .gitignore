@@ -4,6 +4,9 @@ node_modules
 # Edit at https://www.toptal.com/developers/gitignore?templates=osx,windows,visualstudiocode,node
 
 ### Node ###
+#api keys
+.env
+
 # Logs
 logs
 *.log
