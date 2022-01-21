@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Card from "./Card";
-import epl2021 from "../footballdata/2021teams";
 import "./Cards.css";
-
-const standings2021 = epl2021.data.standings;
-console.log("standings2021", standings2021);
 
 const Cards = () => {
   const { season } = useParams();
-  console.log("season", season);
+  // console.log("season", season);
 
   const [teamData, setTeamData] = useState([]);
 
@@ -19,9 +15,9 @@ const Cards = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log("data", data.data.standings);
+        // console.log("data", data.data.standings);
         setTeamData(data.data.standings);
-        console.log("teamData", teamData);
+        // console.log("teamData", teamData);
       })
       .catch((error) => console.log("error", error));
   }, [season]);
@@ -42,6 +38,7 @@ const Cards = () => {
             longName={team?.team?.displayName}
             shortName={team?.team?.shortDisplayName}
             key={i}
+            to={team?.team?.abbreviation}
           />
         );
       })}

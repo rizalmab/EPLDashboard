@@ -22,7 +22,7 @@ const TeamProfile = () => {
       .then((data) => {
         console.log(data.response);
         setTeamProfile(data.response);
-        // console.log("teamProfile", teamProfile);
+        console.log("teamProfile", teamProfile);
       })
       .catch((error) => console.log("error", error));
   }, []);
