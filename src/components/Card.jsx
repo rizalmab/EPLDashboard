@@ -8,12 +8,12 @@ const Card = (props) => {
       <img
         src={props.src}
         className="card-img-top"
-        alt="team logo"
+        alt={props.alt}
         style={{ height: "15rem" }}
       />
       <div className="card-body">
-        <h5 className="card-title">{props.longName}</h5>
-        <p className="card-text">{props.shortName}</p>
+        <h5 className="card-title">{props.title}</h5>
+        <div className="card-text">{props.text}</div>
         {/* <Link to={`/profile/${props.to}`} className="btn btn-outline-primary">
           View Team Profile
         </Link> */}

@@ -18,10 +18,13 @@ const Navbar = () => {
             EPL Tracker
           </Link>
           <Link to="/ranking" className="navbar-brand">
-            Ranking
+            🏆 Ranking
           </Link>
           <Link to="/teams" className="navbar-brand">
-            Teams
+            🏟 Teams
+          </Link>
+          <Link to="/topscorers" className="navbar-brand">
+            🎯 Topscorers
           </Link>
         </div>
       </nav>

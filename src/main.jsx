@@ -6,10 +6,12 @@ import App from "./App";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Ranking from "./pages/Ranking";
 import Teams from "./pages/Teams";
+import TopScorers from "./pages/TopScorers";
 import Navbar from "./components/Navbar";
 import Table from "./components/Table";
-import Cards from "./components/Cards";
+import TeamCards from "./components/TeamCards";
 import TeamProfile from "./components/TeamProfile";
+import TopScorerCards from "./components/TopScorerCards";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,10 +23,13 @@ ReactDOM.render(
           <Route path=":season" element={<Table />} />
         </Route>
         <Route path="/teams" element={<Teams />}>
-          <Route path=":season" element={<Cards />} />
+          <Route path=":season" element={<TeamCards />} />
         </Route>
         <Route path="/profile">
           <Route path=":club" element={<TeamProfile />} />
+        </Route>
+        <Route path="/topscorers" element={<TopScorers />}>
+          <Route path=":season" element={<TopScorerCards />} />
         </Route>
       </Routes>
     </BrowserRouter>

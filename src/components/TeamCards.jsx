@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Card from "./Card";
-import "./Cards.css";
+import "./TeamCards.css";
 
 const Cards = () => {
   const { season } = useParams();
@@ -35,8 +35,8 @@ const Cards = () => {
         return (
           <Card
             src={team?.team?.logos[0]?.href}
-            longName={team?.team?.displayName}
-            shortName={team?.team?.shortDisplayName}
+            title={team?.team?.displayName}
+            text={team?.team?.shortDisplayName}
             key={i}
             to={team?.team?.abbreviation}
           />

@@ -19,6 +19,7 @@ function App() {
     <div className="App">
       <h1>EPL Tracker</h1>
       <p>Introduction to the app</p>
+      <p>Latest News</p>
     </div>
   );
 }
