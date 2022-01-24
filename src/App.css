@@ -4,6 +4,11 @@
 
 body {
   text-align: center;
+  background-color: #c7ffd8;
+}
+
+h1 {
+  margin: 20px;
 }
 
 p {
