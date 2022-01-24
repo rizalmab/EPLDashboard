@@ -1,36 +1,35 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Card from "./Card";
 import PlayerInfo from "./PlayerInfo";
-import topscorers2021 from "../footballdata/topscorers2021";
 
 const TopScorersCards = () => {
-  const topscorers2021arr = topscorers2021.response;
+  const { season } = useParams();
+  const [topScorersData, setTopScorersData] = useState([]);
 
-  // const [topScorersData, setTopScorersData] = useState([]);
+  useEffect(() => {
+    var myHeaders = new Headers();
+    myHeaders.append("x-rapidapi-key", "20827bc0d6fd906fa27a287a71cd6900");
+    myHeaders.append("x-rapidapi-host", "v3.football.api-sports.io");
 
-  // useEffect(() => {
-  //   var myHeaders = new Headers();
-  //   myHeaders.append("x-rapidapi-key", "20827bc0d6fd906fa27a287a71cd6900");
-  //   myHeaders.append("x-rapidapi-host", "v3.football.api-sports.io");
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+    };
 
-  //   var requestOptions = {
-  //     method: "GET",
-  //     headers: myHeaders,
-  //     redirect: "follow",
-  //   };
-
-  //   fetch(
-  //     "https://v3.football.api-sports.io/players/topscorers?league=39&season=2021",
-  //     requestOptions
-  //   )
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log("data", data.response);
-  //       setTopScorersData(data?.response);
-  //       console.log("top scorers data:", topScorersData);
-  //     })
-  //     .catch((error) => console.log("error", error));
-  // }, []);
+    fetch(
+      `https://v3.football.api-sports.io/players/topscorers?league=39&season=${season}`,
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("data", data.response);
+        setTopScorersData(data?.response);
+        console.log("top scorers data:", topScorersData);
+      })
+      .catch((error) => console.log("error", error));
+  }, [season]);
 
   return (
     <div
@@ -41,11 +40,11 @@ const TopScorersCards = () => {
         alignContent: "space-between",
       }}
     >
-      {topscorers2021arr.map((player, i) => {
+      {topScorersData.map((player, i) => {
         return (
           <Card
             title={player?.player?.name}
-            text={<PlayerInfo data={topscorers2021arr} index={i} />}
+            text={<PlayerInfo data={topScorersData} index={i} />}
             alt={"player's picture"}
             src={player?.player?.photo}
             key={i}

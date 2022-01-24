@@ -1,5 +1,6 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
+import News from "./components/News";
 
 function App() {
   // const [info, setInfo] = useState({});
@@ -19,7 +20,7 @@ function App() {
     <div className="App">
       <h1>EPL Tracker</h1>
       <p>Introduction to the app</p>
-      <p>Latest News</p>
+      <News />
     </div>
   );
 }
