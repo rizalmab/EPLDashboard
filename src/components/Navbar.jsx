@@ -1,5 +1,4 @@
 import React from "react";
-import lionface from "../images/lionface.png";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -8,14 +7,7 @@ const Navbar = () => {
       <nav className="navbar navbar-light bg-light">
         <div className="container-fluid">
           <Link to="/" className="navbar-brand">
-            <img
-              src={lionface}
-              alt=""
-              width="30"
-              height="24"
-              className="d-inline-block align-text-top"
-            />
-            EPL Tracker
+            🦁 EPL Tracker
           </Link>
           <Link to="/ranking" className="navbar-brand">
             🏆 Ranking
