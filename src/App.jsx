@@ -1,25 +1,15 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
 import News from "./components/News";
 
 function App() {
-  // const [info, setInfo] = useState({});
-
-  // useEffect(() => {
-  //   fetch(
-  //     "https://api-football-standings.azharimm.site/leagues/eng.1/standings?season=2020&sort=asc"
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       // console.log(data);
-  //       setInfo(data);
-  //     });
-  // }, []);
-
   return (
     <div className="App">
       <h1>EPL Tracker</h1>
-      <p>Introduction to the app</p>
+      <p>
+        The English Premier League (EPL), based in England, is one of the most
+        popular leagues in the world. Browse around to learn more about the
+        teams, players, and top scorers in the EPL.
+      </p>
       <News />
     </div>
   );

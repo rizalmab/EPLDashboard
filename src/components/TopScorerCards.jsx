@@ -9,7 +9,7 @@ const TopScorersCards = () => {
 
   useEffect(() => {
     var myHeaders = new Headers();
-    myHeaders.append("x-rapidapi-key", "20827bc0d6fd906fa27a287a71cd6900");
+    myHeaders.append("x-rapidapi-key", import.meta.env.VITE_API_FOOTBALL);
     myHeaders.append("x-rapidapi-host", "v3.football.api-sports.io");
 
     var requestOptions = {
