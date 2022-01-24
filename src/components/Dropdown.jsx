@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
-const seasons = [2021, 2020, 2019, 2018, 2017, 2016];
+import seasonsArr from "../footballdata/seasonsArr";
 
 const Dropdown = (props) => {
+  const [season, setSeason] = useState("Season");
+
+  const handleClick = (e) => {
+    setSeason(e.target.text);
+  };
+
   return (
     <>
       <div className="dropdown">
@@ -14,33 +19,18 @@ const Dropdown = (props) => {
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          Season
+          {season}
         </button>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          {seasons.map((season) => {
+          {seasonsArr.map((season) => {
             return (
-              <li key={season}>
+              <li key={season} onClick={handleClick}>
                 <Link to={`/${props.page}/${season}`} className="dropdown-item">
                   {season}
                 </Link>
               </li>
             );
           })}
-          {/* <li>
-            <Link to={`/${props.page}/2021`} className="dropdown-item">
-              2021
-            </Link>
-          </li>
-          <li>
-            <Link to={`/${props.page}/2020`} className="dropdown-item">
-              2020
-            </Link>
-          </li>
-          <li>
-            <Link to={`/${props.page}/2019`} className="dropdown-item">
-              2019
-            </Link>
-          </li> */}
         </ul>
       </div>
     </>

@@ -5,7 +5,7 @@ import topscorers2021 from "../footballdata/topscorers2021";
 
 const TopScorersCards = () => {
   const topscorers2021arr = topscorers2021.response;
-  console.log("topscorers2021arr", topscorers2021arr);
+
   // const [topScorersData, setTopScorersData] = useState([]);
 
   // useEffect(() => {
@@ -54,12 +54,6 @@ const TopScorersCards = () => {
       })}
     </div>
   );
-  // <Card
-  //   title={topscorers2021arr[0]?.player?.name}
-  //   text={<PlayerInfo data={topscorers2021arr} />}
-  //   alt={"player's picture"}
-  //   src={topscorers2021arr[0]?.player?.photo}
-  // />
 };
 
 export default TopScorersCards;
