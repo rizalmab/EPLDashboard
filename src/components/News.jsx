@@ -11,7 +11,14 @@ const News = () => {
     <>
       <h5>Latest news</h5>
       <Container>
-        <CardGroup>
+        <CardGroup
+          className="overflow-auto"
+          style={{
+            flexFlow: "row nowrap",
+            height: "350px",
+            maxHeight: "350px",
+          }}
+        >
           {newsDataArr.map((news, i) => {
             return <NewsCard data={news} key={i} />;
           })}

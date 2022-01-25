@@ -8,9 +8,11 @@ import Col from "react-bootstrap/Col";
 const MainContainer = () => {
   return (
     <Container>
-      <Row>
-        <Col>{/* <LiveScores /> */}</Col>
-        <Col>
+      <Row style={{ flexFlow: "row nowrap" }}>
+        <Col style={{ width: "50%", maxWidth: "50%" }}>
+          <LiveScores />
+        </Col>
+        <Col style={{ width: "50%", maxWidth: "50%" }}>
           <News />
         </Col>
       </Row>

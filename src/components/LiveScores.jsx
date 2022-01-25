@@ -14,7 +14,7 @@ const LiveScores = () => {
         data-season="2021"
         data-last="10"
         data-next=""
-        data-key="20827bc0d6fd906fa27a287a71cd6900"
+        data-key={import.meta.env.VITE_API_FOOTBALL}
         data-theme="grey"
         data-show-errors="false"
         className="api_football_loader"
