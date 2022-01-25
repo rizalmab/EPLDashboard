@@ -1,5 +1,7 @@
 import "./App.css";
-import News from "./components/News";
+// import LiveScores from "./components/LiveScores";
+// import News from "./components/News";
+import MainContainer from "./components/MainContainer";
 
 function App() {
   return (
@@ -11,7 +13,7 @@ function App() {
         <br /> Browse around to learn more about the rankings 🏆, teams 🏟 and
         top scorers 🎯 in the EPL.
       </p>
-      <News />
+      <MainContainer />
     </div>
   );
 }
