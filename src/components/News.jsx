@@ -10,7 +10,7 @@ const News = () => {
   return (
     <>
       <h5>Latest news</h5>
-      <Container className="overflow-auto">
+      <Container>
         <CardGroup>
           {newsDataArr.map((news, i) => {
             return <NewsCard data={news} key={i} />;

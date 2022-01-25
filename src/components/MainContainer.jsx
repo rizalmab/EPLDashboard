@@ -9,9 +9,7 @@ const MainContainer = () => {
   return (
     <Container>
       <Row>
-        <Col>
-          <LiveScores />
-        </Col>
+        <Col>{/* <LiveScores /> */}</Col>
         <Col>
           <News />
         </Col>

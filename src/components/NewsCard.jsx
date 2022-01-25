@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 const NewsCard = (props) => {
   return (
     <>
-      <Card>
+      <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src={props.data.urlToImage} />
         <Card.Body>
           <Card.Title>{props.data.title}</Card.Title>
