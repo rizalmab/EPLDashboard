@@ -1,6 +1,5 @@
-import React, { useParams } from "react";
+import React from "react";
 import Dropdown from "../components/Dropdown";
-import Table from "../components/Table";
 import { Outlet } from "react-router-dom";
 
 const Ranking = () => {

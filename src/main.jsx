@@ -7,9 +7,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Ranking from "./pages/Ranking";
 import Teams from "./pages/Teams";
 import TopScorers from "./pages/TopScorers";
-import Navbar from "./components/Navbar";
-import Table from "./components/Table";
-import TeamCards from "./components/TeamCards";
+import Navbar from "./components/Navbar/Navbar";
+import Table from "./components/Table/Table";
+import TeamCards from "./components/TeamCards/TeamCards";
 import TeamProfile from "./components/TeamProfile";
 import TopScorerCards from "./components/TopScorerCards";
 

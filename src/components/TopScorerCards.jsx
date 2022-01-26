@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Card from "./Card";
+import Card from "./Card/Card";
 import PlayerInfo from "./PlayerInfo";
+import { trackPromise } from "react-promise-tracker";
+import LoadingSpinner from "./LoadingSpinner";
 
 const TopScorersCards = () => {
   const { season } = useParams();
@@ -18,9 +20,11 @@ const TopScorersCards = () => {
       redirect: "follow",
     };
 
-    fetch(
-      `https://v3.football.api-sports.io/players/topscorers?league=39&season=${season}`,
-      requestOptions
+    trackPromise(
+      fetch(
+        `https://v3.football.api-sports.io/players/topscorers?league=39&season=${season}`,
+        requestOptions
+      )
     )
       .then((response) => response.json())
       .then((data) => {
@@ -32,25 +36,28 @@ const TopScorersCards = () => {
   }, [season]);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "space-around",
-        alignContent: "space-between",
-      }}
-    >
-      {topScorersData.map((player, i) => {
-        return (
-          <Card
-            title={player?.player?.name}
-            text={<PlayerInfo data={topScorersData} index={i} />}
-            alt={"player's picture"}
-            src={player?.player?.photo}
-            key={i}
-          />
-        );
-      })}
+    <div>
+      <LoadingSpinner />
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "space-around",
+          alignContent: "space-between",
+        }}
+      >
+        {topScorersData.map((player, i) => {
+          return (
+            <Card
+              title={player?.player?.name}
+              text={<PlayerInfo data={topScorersData} index={i} />}
+              alt={"player's picture"}
+              src={player?.player?.photo}
+              key={i}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { trackPromise } from "react-promise-tracker";
 import "./Table.css";
+import LoadingSpinner from "../LoadingSpinner";
 
 const Table = () => {
   const { season } = useParams();
@@ -8,8 +10,10 @@ const Table = () => {
   const [tableData, setTableData] = useState([]);
 
   useEffect(() => {
-    fetch(
-      `https://api-football-standings.azharimm.site/leagues/eng.1/standings?season=${season}&sort=asc`
+    trackPromise(
+      fetch(
+        `https://api-football-standings.azharimm.site/leagues/eng.1/standings?season=${season}&sort=asc`
+      )
     )
       .then((res) => res.json())
       .then((data) => {
@@ -20,7 +24,8 @@ const Table = () => {
 
   return (
     <>
-      <table className="table table-striped table-hover">
+      <LoadingSpinner />
+      <table className="table table-striped table-dark">
         <thead>
           <tr>
             <th scope="col">Ranking</th>
